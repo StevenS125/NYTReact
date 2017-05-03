@@ -5,7 +5,7 @@ var mongoose = require('mongoose');
 var Article = require('./models/Article.js');
 
 var app = express();
-var PORT = process.env.PORT || 3000;
+var PORT = process.env.PORT || 4000;
 
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({extended: true}));
@@ -14,9 +14,9 @@ app.use(bodyParser.json({type:'application/vnd.api+json'}));
 
 app.use(express.static('./public'));
 
-// var link = '';
+var link = 'mongodb://heroku_f1l9jlk2:7shugb68v5tu2ve4vqpnqalpbn@ds129641.mlab.com:29641/heroku_f1l9jlk2';
 //Local link
-var link = 'mongodb://localhost/nytreact';
+// var link = 'mongodb://localhost/nytreact';
 
 mongoose.connect(link);
 var db = mongoose.connection;
